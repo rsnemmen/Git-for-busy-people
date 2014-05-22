@@ -1,13 +1,13 @@
 Git for busy people
 =======
 
-![](https://www.spkaa.com/wp-content/uploads/2013/12/Git-1.8.5.1.jpg =100x)
+![](./gitlogo.jpg =100x)
 
 Your collaborator invited you to contribute to a project which is hosted in a remote git repository (let's say, [github](https://github.com) or [bitbucket](https://bitbucket.org))? You never used git or have very little experience with it. What do you do now?
 
-This is a very quick guide on how to use git for collaborating on an existing project. 
+This is a very quick tutorial on how to use git for collaborating on an existing project. 
 
-# First time using git
+## First time using git
 
 You want to setup your identity (name and e-mail) for the future. You only need to do this once in each machine where you work:
 
@@ -16,7 +16,7 @@ git config user.name "Your Name"
 git config user.email "me@example.com"
 ```
 
-# Download files for the first time
+## Download files for the first time
 
 In other words, create a local copy ("clone") of the project in your machine:
 
@@ -32,7 +32,7 @@ git log
 ```
 
 
-# Changing things, "saving the game"
+## Changing things, "saving the game"
 
 Now you decide to edit some file(s). To add a file which is not in the project, you can issue
 
@@ -54,7 +54,7 @@ git commit -am "added the discussion section and figure with time variability"
 ```
 When you commit, don't forget to include a short description of what you changed. If you want to describe things in more details, just issue `git commit`. This will open a text editor which will prompt you for a description of what changed. It is standard practice to begin the commit message with a single short (less than 50 character) line summarizing the change, followed by a blank line and then a more thorough description. 
 
-# Uploading your changes to collaborators
+## Uploading your changes to collaborators
 
 So far, your changes have been saved locally in your machine and the remote server (i.e. your collaborators) do not know about them. To upload the changes to them, *first commit*, then issue
 
@@ -62,7 +62,7 @@ So far, your changes have been saved locally in your machine and the remote serv
 git push
 ```
 
-# Downloading updates on the project
+## Downloading updates on the project
 
 After a while, your collaborators probably did some work and changed things. To update the state of the project, you can type
 
@@ -72,7 +72,7 @@ git pull
 This will download the files from the server and update the project on your machine.
 
 
-# Creating alternate, exploratory, "savegames"
+## Creating alternate, exploratory, "savegames"
 
 This concept is a little more advanced. Suppose you have some awesome idea which is tricky and may put the project at risk and/or introduce bugs. Instead of having one single save state which is continuosly evolving and updated by everybody (in the git language, the *master branch*), you can create a parallel save state which will have a copy of the project and keep the stable version of the project safe aside. Let's call this alternate save state "explore":
 
@@ -97,7 +97,7 @@ git merge explore
 If you decide to upload the new exploratory branch to the remote server, you can do a push command
 -->
 
-# More
+## More
 
 I skipped here some concepts, such as creating a local repository in your machine, uploading your new local repo to a remote server, fixing a wrong commit message, defining workflows and many other things, for the sake of brevity.
 
