@@ -1,7 +1,11 @@
 Git for busy people
 =======
 
+<!---
 ![](./gitlogo.jpg =100x)
+-->
+
+<img src="gitlogo.jpg" width="100px" />
 
 Your collaborator invited you to contribute to a project which is hosted in a remote git repository (let's say, [github](https://github.com) or [bitbucket](https://bitbucket.org))? You never used git or have very little experience with it. What do you do now?
 
