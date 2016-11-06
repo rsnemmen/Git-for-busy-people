@@ -7,11 +7,11 @@ Git for busy people
 
 <img src="gitlogo.jpg" width="100px" />
 
-Your collaborator invited you to contribute to a project which is hosted in a remote git repository (let's say, [github](https://github.com) or [bitbucket](https://bitbucket.org))? You never used git or have very little experience with it. What do you do now?
+Your collaborator invited you to contribute to a git project which is hosted in a remote repository (let's say, [github](https://github.com) or [bitbucket](https://bitbucket.org))? You never used git or have very little experience with it. What do you do now?
 
 This is a very quick tutorial on how to use git for collaborating on an existing project. 
 
-## First time using git
+## Setup your identity for the first time
 
 You want to setup your identity (name and e-mail) for the future. You only need to do this once in each machine where you work:
 
@@ -26,8 +26,9 @@ In other words, create a local copy ("clone") of the project in your machine:
 
 ```
 git clone https://user@bitbucket.org/user/projectrepo.git
-``` 
-where of course you replace the username and project name in the command above. You probably already received the appropriate address from your collaborator. This will create a folder called "projectrepo".
+```
+ 
+where of course you replace the username and project name in the command above. You probably already received the appropriate address from your collaborator. This will create a folder called `projectrepo`.
 
 Let's see the history of "saved snapshots" (commits) of the project so far:
 
@@ -38,7 +39,7 @@ git log
 
 ## Changing things, "saving the game"
 
-Now you decide to edit some file(s). To add a file which is not in the project, you can issue
+Now you decide to edit some file(s). If you need to add a file which is not in the project, you can issue
 
 ```
 git add newfile
@@ -50,13 +51,14 @@ To inspect what you changed with respect to the last saved state of the project:
 git diff
 ```
 
-Once you are done with your editing, you want to save the state of the project. I like to think of this using an analogy with videogames: you save your game and can easily go back in time, if things go wrong later. In the git world, saving the game is called "commit":
+Once you are done with your editing, you want to save the state  of the project. I like to think of this using an analogy with videogames: you save your game and can easily go back in time, if things go wrong later. In the git world, saving the game is called *commit*:
 
 
 ```
 git commit -am "added the discussion section and figure with time variability"
 ```
-When you commit, don't forget to include a short description of what you changed. If you want to describe things in more details, just issue `git commit`. This will open a text editor which will prompt you for a description of what changed. It is standard practice to begin the commit message with a single short (less than 50 character) line summarizing the change, followed by a blank line and then a more thorough description. 
+
+When you commit, don't forget to include a short description of what you changed. If you want to describe things in more details, just issue `git commit -a`. This will open a text editor which will prompt you for a description of what changed. It is standard practice to begin the commit message with a single short (less than 50 character) line summarizing the change, followed by a blank line and then a more thorough description. 
 
 ## Uploading your changes to collaborators
 
@@ -66,6 +68,8 @@ So far, your changes have been saved locally in your machine and the remote serv
 git push
 ```
 
+*Nothing is uploaded to the project until you both commit and push*. 
+
 ## Downloading updates on the project
 
 After a while, your collaborators probably did some work and changed things. To update the state of the project, you can type
@@ -73,6 +77,7 @@ After a while, your collaborators probably did some work and changed things. To 
 ```
 git pull
 ```
+
 This will download the files from the server and update the project on your machine.
 
 
