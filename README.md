@@ -1,15 +1,7 @@
 Git basics
 ===============
 
-<!---
-![](./gitlogo.jpg =100x)
--->
-
-<img src="gitlogo.jpg" width="100px" />
-
-Your collaborator invited you to contribute to a git project which is hosted in a remote repository (let's say, [github](https://github.com) or [bitbucket](https://bitbucket.org))? You never used git or have very little experience with it. What do you do now?
-
-This is a very quick tutorial on how to use git for collaborating on an existing project. 
+This is quick tutorial on how to use `git`. The idea is to grasp the basic concepts needed to download and perhaps contribute to an existing git repository (let's say, [github](https://github.com) or [bitbucket](https://bitbucket.org)). 
 
 # Setup your identity for the first time
 
@@ -22,7 +14,7 @@ git config user.email "me@example.com"
 
 # Download files for the first time
 
-In other words, create a local copy ("clone") of the project in your machine:
+To create a local copy ("clone") of the project in your machine:
 
     git clone https://user@bitbucket.org/user/projectrepo.git
  
@@ -47,18 +39,26 @@ To inspect what you changed with respect to the last saved state of the project:
 git diff
 ```
 
-Once you are done with your editing, you want to save the state  of the project. I like to think of this using an analogy with videogames: you save your game and can easily go back in time, if things go wrong later. In the git world, saving the game is called *commit*:
+Once you are done with your editing, you want to save the state  of the project. I like to think of this using an analogy with videogames: you save your game and can easily go back in time, if things go wrong later. In the git world, saving the game is called *commit*.
 
+Suppose you changed a source code file in the repository directory. To save the state of the project, you could use the following command:
 
 ```
 git commit -am "added the discussion section and figure with time variability"
 ```
 
-When you commit, don't forget to include a short description of what you changed. If you want to describe things in more details, just issue `git commit -a`. This will open a text editor which will prompt you for a description of what changed. It is standard practice to begin the commit message with a single short (less than 50 character) line summarizing the change, followed by a blank line and then a more thorough description. 
+with a short description of what you changed. 
 
-# Uploading your changes to collaborators
+If you want to describe things in more details, just issue `git commit -a`. This will open a text editor which will prompt you for a description of what changed. It is standard practice to begin the commit message with a single short (less than 50 character) line summarizing the change, followed by a blank line and then a more thorough description. 
 
-So far, your changes have been saved locally in your machine and the remote server (i.e. your collaborators) do not know about them. To upload the changes to them, *first commit*, then issue
+By the way, when writing a longer commit message, the default git text editor is VI. I particularly do not like this editor and instead prefer to use nano. You can change the text editor used by git with this command:
+
+    git config --global core.editor nano
+
+
+# Uploading changes to the cloud
+
+When you commit, the changes are only saved locally in your machine. To upload the changes to the cloud such that it is accessible to collaborators, first commit your code then issue
 
 ```
 git push
@@ -66,9 +66,11 @@ git push
 
 *Nothing is uploaded to the project until you both commit and push*. 
 
+If the repo is owned by you, your changes should be immediately available in the cloud (github, bitbucket or wherever you keep your repo). If not, then you need to follow the procedure of [submitting a pull request](https://opensource.guide/how-to-contribute/#opening-a-pull-request). 
+
 # Downloading updates on the project
 
-After a while, your collaborators probably did some work and changed things. To update the state of the project, you can type
+After a while, your collaborators probably did some work and changed things. To update the state of the project with the latest changes: 
 
 ```
 git pull
@@ -117,4 +119,4 @@ You can find useful material in the following websites:
 
 - - - 
 
-[Visit the author's web page](https://rodrigonemmen.com) and/or follow him on twitter ([@astrorho](https://twitter.com/nemmen)).
+[Visit the author's web page](https://rodrigonemmen.com) and/or follow him on twitter ([@nemmen](https://twitter.com/nemmen)).
